@@ -1,0 +1,161 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #7740A3;
+    color: white;
+}
+
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(125deg, #7740A3 60%, #d89ad2 45%);
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    margin-top: 30px;
+    max-width: 50%;
+    text-align: center;
+}
+
+.title {
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    text-shadow: 4px -4px 0 #D07FBF, 8px -8px 0 #D07FBF;
+}
+
+.title span {
+    color: white;
+    text-shadow: 4px -4px 0 #D07FBF, 8px -8px 0 #D07FBF;
+}
+
+.read-more {
+    padding: 15px 20px;
+    background-color: #d89ad2;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #c77cc0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.main_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    transition: background-color 0.3s ease;
+    background-color: #d89ad2;
+    color: #7740A3;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 800;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.main_icon:hover {
+    background-color: #c77cc0;
+}
+
+.inst_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.tg_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    align-self: flex-end;
+    position: relative;
+}
+
+@media (max-width: 978px) {
+    .title {
+        padding-top: 40px;
+        font-size: 40px;
+    }
+    .description {
+        font-size: 15px;
+    }
+    .read-more {
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .image {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        height: 80vh;
+    }
+    .title {
+        padding-top: 40px;
+        font-size: 30px;
+    }
+    .image {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+    .read-more {
+        font-size: 10px;
+        font-weight: 200;
+    }
+}
