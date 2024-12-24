@@ -1,30 +1,35 @@
 import React from "react";
 import "./ThirdPage.css";
+import { useTranslation } from "react-i18next";
 
-const projects = [
-    { id: 1, title: "ACTIVE G Academy" },
-    { id: 2, title: "ЯПокоління" },
-    { id: 3, title: 'Онлайн-Табір із Соціальної Реклами "Думка"' },
-    { id: 4, title: 'Програма тренінгів "Introduction to Success"' },
-    { id: 5, title: "Літній BootCamp Лідерства 2024 в Миколаєві" },
-    { id: 6, title: 'Перший студентський форум "Горизонт Лідерства"' },
-    { id: 7, title: "Initiative StartUp BootCamp Лідерства 2024 в Миколаєві" },
+const Projects = () => {
+  const { t } = useTranslation("translation", { keyPrefix: "projects" });
+
+  const projects = [
+    { id: 1, title: t("project1Title"), link: t("project1Link") },
+    { id: 2, title: t("project2Title"), link: t("project2Link") },
+    { id: 3, title: t("project3Title"), link: t("project3Link") },
+    { id: 4, title: t("project4Title"), link: t("project4Link") },
+    { id: 5, title: t("project5Title"), link: t("project5Link") },
+    { id: 6, title: t("project6Title"), link: t("project6Link") },
+    { id: 7, title: t("project7Title"), link: t("project7Link") },
   ];
 
-  const Projects = () => {
-    return (
-      <section className="projects-section">
-        <h1 className="section-title">Наші Проекти</h1>
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <h2 className="project-title">{project.title}</h2>
-              <a href="https://platforma.volunteer.country/organizations/active-generation" className="project-button">Читати більше</a>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  };
+  return (
+    <section id="projects" className="projects-section">
+      <h1 className="section-title">{t("projectsTitle")}</h1>
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
+            <h2 className="project-title">{project.title}</h2>
+            <a href={project.link} className="project-button">
+              {t("readMore")}
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default Projects;

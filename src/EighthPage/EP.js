@@ -1,12 +1,16 @@
 import React from 'react';
 import "./EP.css";
+import { useTranslation } from 'react-i18next';
 
 const FooterSection = () => {
+
+  const { t } = useTranslation("translation", { keyPrefix: "footer" });
+
   return (
     <section id="contacts" className='EP'>
       <nav>
         <a className='imp_link' href="https://mail.google.com/mail/?view=cm&fs=1&to=active.generation.official@gmail.com" target="_blank">active.generation.official@gmail.com</a><br>
-        </br><a className='imp_link' href="https://www.google.com/maps/place/николаев/data=!4m2!3m1!1s0x40c5cb89fb7213d5:0x970e39fab9e05680?sa=X&ved=1t:155783&ictx=111#">Україна, м. Миколаїв</a>
+        </br><a className='imp_link' href="https://www.google.com/maps/place/николаев/data=!4m2!3m1!1s0x40c5cb89fb7213d5:0x970e39fab9e05680?sa=X&ved=1t:155783&ictx=111#">{t("city")}</a>
       </nav>
       <nav>
         <p className='footer_links'>

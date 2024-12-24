@@ -10,6 +10,7 @@ html {
 }
 
 .desktop {
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +45,7 @@ html {
 }
 
 .active-btn,
-.lang-btn {
+.btnLangSwitch {
   font-weight: 1000;
   font-size: 18px;
   color: #7740A3;
@@ -66,7 +67,7 @@ html {
   display: none;
 }
 
-@media (max-width: 778px) {
+@media (max-width: 808px) {
   .desktop {
     display: none;
   }
@@ -127,7 +128,7 @@ html {
   .active-btn {
     display: none;
   }
-  .lang-btn {
+  .btnLangSwitch {
     font-weight: 900;
     font-size: 18px;
     color: #ffffff;
@@ -135,12 +136,12 @@ html {
     border: none;
     padding: 5px 20px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.5s;
   }
-  .lang-btn:active {
-    transform: scale(0.98);
+  .btnLangSwitch:active {
+    transform: scale(0.99);
     background-color: #7e4fa4;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   .mobile-navbar {
     padding: 20px;

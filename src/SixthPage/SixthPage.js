@@ -1,22 +1,25 @@
 import React from "react";
-import "./SixthPage.css"; // Підключення стилів
+import "./SixthPage.css";
+import { useTranslation } from "react-i18next";
 
 const CardSection = () => {
+  const { t } = useTranslation("translation", { keyPrefix: "cardSection" });
+
   const cards = [
     {
-      title: "Стати Координатором Партнерств в AG",
-      date: "2024-11-01/2025-11-01",
-      organization: "ACTIVE Generation",
+      title: t("title1"),
+      date: t("date1"),
+      organization: t("organization1"),
     },
     {
-      title: "Приєднуйся до Вмотивованої Команди CMM ACTIVE Generation",
-      date: "2024-11-13/2025-02-18",
-      organization: "ACTIVE Generation",
+      title: t("title2"),
+      date: t("date2"),
+      organization: t("organization2"),
     },
     {
-      title: "Долучайся до ACTIVE G Dialogues",
-      date: "2024-08-21/2025-12-11",
-      organization: "ACTIVE Generation",
+      title: t("title3"),
+      date: t("date3"),
+      organization: t("organization3"),
     },
   ];
 
@@ -24,12 +27,12 @@ const CardSection = () => {
     <a id="join" className="card-section">
       {cards.map((card, index) => (
         <div key={index} className="card">
-            <div className="card-content">
-                <img src="./AGlogo.webp" alt="Logo" className="logo" />
-                <p className="card-date">{card.date}</p>
-            </div>
-            <h3 className="card-title">{card.title}</h3>
-            <p className="card-organization">{card.organization}</p>
+          <div className="card-content">
+            <img src="./AGlogo.webp" alt="Logo" className="logo" />
+            <p className="card-date">{card.date}</p>
+          </div>
+          <h3 className="card-title">{card.title}</h3>
+          <p className="card-organization">{card.organization}</p>
         </div>
       ))}
     </a>

@@ -1,39 +1,43 @@
 import React, { useState } from 'react';
 import './Header.css';
+import { useTranslation } from "react-i18next";
+import LngSwitch from '../translateResourses/LngSwitch';
+
+const LINKS = [
+  { name: 'about', section: 'about-us' },
+  { name: 'philosophy', section: 'philosophy' },
+  { name: 'contacts', section: 'contacts' },
+  { name: 'join', section: 'join' },
+  { name: 'projects', section: 'projects' },
+];
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);  // Стан для меню
-
-  const LINKS = [
-    { name: 'About us', section: 'about-us' },
-    { name: 'Philosophy', section: 'philosophy' },
-    { name: 'Contacts', section: 'contacts' },
-    { name: 'Join us!', section: 'join' },
-  ];
+  const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation("translation", { keyPrefix: "navigation" });
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);  // Перемикаємо стан меню
+    setIsOpen(!isOpen);
   };
 
   return (
-    <div className="App">
-      <div className='desktop'>
+    <div id="navigation" className="App">
+      <div className="desktop">
         <a href="/" className="active-btn">ACTIVE G</a>
         <nav className={`header-navbar ${isOpen ? 'open' : ''}`}>
           <tr className="header-navbar__links-list">
             {LINKS.map(({ name, section }) => (
               <td key={name}>
                 <a href={`#${section}`} className="header-navbar__link">
-                  {name}
+                  {t(name)}
                 </a>
               </td>
             ))}
           </tr>
         </nav>
-        <button className="lang-btn">ENG</button>
+        <LngSwitch /> 
       </div>
 
-      <div className='mob-div'>
+      <div className="mob-div">
         <a href="/" className="ag-btn">AG</a>
         <div className="burger-menu" onClick={toggleMenu}>
           <div></div>
@@ -44,12 +48,12 @@ function Header() {
 
       {isOpen && (
         <nav className="mobile-navbar">
-        <button className="lang-btn">ENG</button>
+          <LngSwitch />
           <tr className="header-navbar__links-list">
             {LINKS.map(({ name, section }) => (
               <td key={name}>
                 <a href={`#${section}`} className="header-navbar__link">
-                  {name}
+                  {t(name)}
                 </a>
               </td>
             ))}

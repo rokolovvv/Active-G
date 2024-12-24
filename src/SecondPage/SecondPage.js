@@ -1,7 +1,11 @@
 import React from 'react';
 import './SecondPage.css';
+import { useTranslation } from 'react-i18next';
 
 export default function LandingPage() {
+
+  const { t } = useTranslation("translation", { keyPrefix: "about" });
+
   return (
     <section id="about-us" className="landing-page">
       <div className="header2">
@@ -13,29 +17,29 @@ export default function LandingPage() {
       <div className="page">
       <div className='line'></div>
         <div className="column">
-          <h2 className="column-title">Мета</h2>
+          <h2 className="column-title">{t("aboutMetaTitle")}</h2>
           <p className="column-text">
-            - зробити молодь України більш успішною, амбіційною та пристосованою до змін за допомогою проведення проектів, зустрічей та ініціатив;
+            {t("aboutMeta1")}
             <br />
             <br />
-            - збудувати спільноту освічених лідерів, які змінюватимуть світ;
+            {t("aboutMeta2")}
             <br />
             <br />
-            - підштовхнути світ до змін та реалізації ідей за допомогою ініціатив, які ми створюємо.
+            {t("aboutMeta3")}
           </p>
         </div>
 
         <div className="column">
-          <h2 className="column-title">Волонтерство</h2>
+          <h2 className="column-title">{t("aboutVolunteerTitle")}</h2>
           <p className="column-text">
-            Наші круті тіммейти створюють потужну силу інновацій, які з великою мотивацією розвивають молодіжний рух, використовуючи власний досвід, знання, можливості та свої здібності.
+            {t("aboutVolunteer")}
           </p>
         </div>
 
         <div className="column">
-          <h2 className="column-title">Цінності</h2>
+          <h2 className="column-title">{t("aboutValuesTitle")}</h2>
           <p className="column-text">
-            ACTIVE Generation пропонує спробувати свої сили у різних напрямках волонтерства від менторів до СММ. Для нашої команди важливо, аби кожен тіммейт проявляв свою ініціативність, експертність та відданість своїй справі.
+            {t("aboutValues")}
           </p>
         </div>
       </div>
